@@ -23,13 +23,11 @@ export class Color {
 		const digit = Math.floor(d)
 			.toString(16)
 			.slice(-2);
-
 		return digit.length === 2 ? digit : `0${digit}`;
 	}
 
 	public toHexString(): string {
 		const [r, g, b] = this.rgb.map(d => this.hexDigit(d));
-
 		return this.alpha === 1 ? `#${r}${g}${b}` : `#${r}${g}${b}${this.hexDigit(this.alpha * 255)}`;
 	}
 
@@ -65,6 +63,10 @@ export const colors = {
 	blue40: new Color({
 		displayName: 'Blue 40',
 		rgb: [102, 169, 230]
+	}),
+	red: new Color({
+		displayName: 'Red',
+		rgb: [240, 40, 110]
 	}),
 	grey20: new Color({
 		displayName: 'Grey 20',
