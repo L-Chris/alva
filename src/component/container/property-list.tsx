@@ -145,6 +145,18 @@ class PropertyTree extends React.Component<PropertyTreeProps> {
 								/>
 							);
 
+						case 'asset':
+							return (
+								<StringItem
+									key={id}
+									label={name}
+									value={value as string}
+									handleChange={event =>
+										this.handleChange(id, event.currentTarget.value, context)
+									}
+								/>
+							);
+
 						case 'object':
 							const objectProperty = property as ObjectProperty;
 							const newPath = (context && `${context.path}.${id}`) || id;
